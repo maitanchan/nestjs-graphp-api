@@ -9,8 +9,11 @@ import { Owner } from './entities/owner.entity';
   imports: [TypeOrmModule.forFeature([Owner])],
 
   providers: [
+
     OwnersResolver,
+
     OwnersService
+
   ],
 
   exports: [OwnersService]

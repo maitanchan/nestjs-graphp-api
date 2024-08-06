@@ -10,15 +10,23 @@ import { OwnersModule } from './owners/owners.module';
   imports: [
 
     GraphQLModule.forRoot<ApolloDriverConfig>({
+
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql')
+
     }),
 
     TypeOrmModule.forRoot({
+
       type: 'sqlite',
+
       database: ':memory:',
+
       entities: ['dist/**/*.entity{.ts,.js}'],
+
       synchronize: true
+
     }),
 
     PetsModule,
